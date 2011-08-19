@@ -82,7 +82,7 @@ describe('tabIndex', function(){
 });
 
 var video = document.createElement('video');
-if(video. canPlayType){
+if(video.canPlayType){
     describe('Video/Audio loop, controls, and autoplay set/get attributes', function(){
             it('Should set/get the boolean value of loop, controls, and autoplay', function(){
                 var div = new Element('div', {html: '<video loop controls autoplay>'}),
