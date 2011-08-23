@@ -83,14 +83,12 @@ describe('Element', function(){
 	});
 
 	if (document.createElement('video').canPlayType){
-		describe('Video/Audio loop, controls, and autoplay set/get attributes', function(){
+		describe('Video/Audio controls and autoplay set/get attributes', function(){
 
-			it('should set/get the boolean value of loop, controls, and autoplay', function(){
-				var div = new Element('div', {html: '<video loop controls autoplay>'}),
+			it('should set/get the boolean value of controls and autoplay', function(){
+				var div = new Element('div', {html: '<video controls autoplay>'}),
 					video = div.getElement('video');
 
-				expect(video.getProperty('loop')).toBe(true);
-				expect(video.setProperty('loop', false).getProperty('loop')).toBe(false);
 				expect(video.getProperty('controls')).toBe(true);
 				expect(video.setProperty('controls', false).getProperty('controls')).toBe(false);
 				expect(video.getProperty('autoplay')).toBe(true);
