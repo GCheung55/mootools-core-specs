@@ -83,7 +83,7 @@ describe('Element', function(){
 	});
 
 	if (document.createElement('video').canPlayType){
-		describe('Video/Audio controls and autoplay set/get attributes', function(){
+		describe('Video/Audio controls, and autoplay set/get attributes', function(){
 
 			it('should set/get the boolean value of controls and autoplay', function(){
 				var div = new Element('div', {html: '<video controls autoplay>'}),
@@ -97,5 +97,17 @@ describe('Element', function(){
 
 		});
 	}
+
+	describe("Element.set('html')", function(){
+
+		describe('HTML5 tags', function(){
+
+			it('should create childNodes for html5 tags', function(){
+				expect(new Element('div', {html: '<nav>Muu</nav><p>Tuuls</p><section>!</section>'}).childNodes.length).toEqual(3);
+			});
+
+		});
+
+	});
 
 });
